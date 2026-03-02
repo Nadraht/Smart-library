@@ -31,19 +31,22 @@ public class BorrowPanel extends JPanel {
 
         gbc.insets = new Insets(5, 5, 5, 5);
 
-        gbc.gridx = 0; gbc.gridy = 0;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
         add(userLabel, gbc);
 
         gbc.gridx = 1;
         add(userIdField, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 1;
+        gbc.gridx = 0;
+        gbc.gridy = 1;
         add(itemLabel, gbc);
 
         gbc.gridx = 1;
         add(itemIdField, gbc);
 
-        gbc.gridx = 0; gbc.gridy = 2;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
         add(borrowBtn, gbc);
 
         gbc.gridx = 1;
@@ -54,20 +57,26 @@ public class BorrowPanel extends JPanel {
 
     private void addListeners() {
         borrowBtn.addActionListener(e -> {
+            if (userIdField.getText().isEmpty() || itemIdField.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Fields cannot be empty!");
+                return;
+            }
             boolean success = controller.borrowItem(
                     userIdField.getText(),
-                    itemIdField.getText()
-            );
+                    itemIdField.getText());
 
             JOptionPane.showMessageDialog(this,
                     success ? "Borrow successful!" : "Item unavailable, added to queue.");
         });
 
         returnBtn.addActionListener(e -> {
+            if (userIdField.getText().isEmpty() || itemIdField.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Fields cannot be empty!");
+                return;
+            }
             boolean success = controller.returnItem(
                     userIdField.getText(),
-                    itemIdField.getText()
-            );
+                    itemIdField.getText());
 
             JOptionPane.showMessageDialog(this,
                     success ? "Return successful!" : "Return failed.");

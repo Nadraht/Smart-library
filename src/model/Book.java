@@ -2,16 +2,24 @@ package model;
 
 public class Book extends LibraryItem implements Borrowable {
     private String isbn;
+    private String genre;
     private int copies;
 
-    public Book(String id, String title, String author, int year, String isbn, int copies) {
+    public Book(String id, String title, String author, int year, String isbn, String genre, int copies) {
         super(id, title, author, year);
         this.isbn = isbn;
+        this.genre = genre;
         this.copies = copies;
+        // If copies is 0 (for some reason), set available to false immediately
+        this.isAvailable = (copies > 0);
     }
 
     public String getIsbn() {
         return isbn;
+    }
+
+    public String getGenre() {
+        return genre;
     }
 
     public int getCopies() {

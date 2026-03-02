@@ -30,7 +30,7 @@ public class FileHandler {
                     Book b = (Book) item;
                     writer.println("BOOK|" + b.getId() + "|" + b.getTitle() + "|" +
                             b.getAuthor() + "|" + b.getYear() + "|" +
-                            b.getIsbn() + "|" + b.getCopies());
+                            b.getIsbn() + "|" + b.getGenre() + "|" + b.getCopies());
                 }
 
                 else if (item instanceof Magazine) {
@@ -80,8 +80,8 @@ public class FileHandler {
                         db.addItem(new Book(
                                 parts[1], parts[2], parts[3],
                                 Integer.parseInt(parts[4]),
-                                parts[5],
-                                Integer.parseInt(parts[6])));
+                                parts[5], parts[6],
+                                Integer.parseInt(parts[7])));
                         break;
 
                     case "MAGAZINE":

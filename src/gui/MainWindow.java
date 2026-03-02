@@ -2,6 +2,7 @@ package gui;
 
 import model.LibraryDatabase;
 import utils.FileHandler;
+import utils.OverdueReminder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,7 @@ public class MainWindow extends JFrame {
     public MainWindow() {
         database = new LibraryDatabase();
         FileHandler.loadData(database);
+        OverdueReminder.startReminder(database);
 
         setTitle("Smart Library Circulation & Automation System");
         setSize(900, 600);
@@ -28,10 +30,21 @@ public class MainWindow extends JFrame {
     private void initUI() {
         tabbedPane = new JTabbedPane();
 
-        tabbedPane.addTab("View Items", new ViewPanel(database));
+        // 1. Create the panel and keep a reference to it
+        ViewPanel viewPanel = new ViewPanel(database);
+
+        // 2. Add your panels
+        tabbedPane.addTab("View Items", viewPanel);
         tabbedPane.addTab("Borrow / Return", new BorrowPanel(database));
         tabbedPane.addTab("Admin", new AdminPanel(database));
         tabbedPane.addTab("Search & Sort", new SearchSortPanel(database));
+
+        // 3. ADD THIS LISTENER: It triggers the refresh when the tab is clicked
+        tabbedPane.addChangeListener(e -> {
+            if (tabbedPane.getSelectedComponent() instanceof ViewPanel) {
+                ((ViewPanel) tabbedPane.getSelectedComponent()).refreshTable();
+            }
+        });
 
         add(tabbedPane, BorderLayout.CENTER);
     }
