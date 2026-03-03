@@ -4,26 +4,34 @@ import model.*;
 import java.util.*;
 
 public class SearchEngine {
-    // LINEAR SEARCH
-    public LibraryItem linearSearch(List<LibraryItem> items, String title) {
+
+    // 1. KEYWORD LINEAR SEARCH: Fixed to find partial matches (keywords)
+    // UPDATED LINEAR SEARCH: Matches if the chosen field contains the keyword
+    public List<LibraryItem> linearSearch(List<LibraryItem> items, String keyword, String field) {
+        List<LibraryItem> results = new ArrayList<>();
         for (LibraryItem item : items) {
-            if (item.getTitle().equalsIgnoreCase(title))
-                return item;
+            // Get the value of the field we are searching in (Title, Author, or Year)
+            String fieldValue = getFieldValue(item, field);
+
+            // Case-insensitive partial match
+            if (fieldValue.toLowerCase().contains(keyword.toLowerCase())) {
+                results.add(item);
+            }
         }
-        return null;
+        return results;
     }
 
-    // BINARY SEARCH (requires sorted list)
-    public LibraryItem binarySearch(List<LibraryItem> items, String title) {
+    // 2. BINARY SEARCH: Works on Title, Author, or Year (if sorted)
+    public LibraryItem binarySearch(List<LibraryItem> items, String target, String field) {
         int left = 0, right = items.size() - 1;
-
         while (left <= right) {
-            int mid = (left + right) / 2;
-            int cmp = items.get(mid).getTitle().compareToIgnoreCase(title);
+            int mid = left + (right - left) / 2;
+            String midValue = getFieldValue(items.get(mid), field);
+            int cmp = midValue.compareToIgnoreCase(target);
 
             if (cmp == 0)
                 return items.get(mid);
-            else if (cmp < 0)
+            if (cmp < 0)
                 left = mid + 1;
             else
                 right = mid - 1;
@@ -31,58 +39,58 @@ public class SearchEngine {
         return null;
     }
 
-    // RECURSIVE SEARCH
-    public LibraryItem recursiveSearch(List<LibraryItem> items, String title, int index) {
-        if (index >= items.size())
-            return null;
-        if (items.get(index).getTitle().equalsIgnoreCase(title))
-            return items.get(index);
-        return recursiveSearch(items, title, index + 1);
-    }
-
-    // SELECTION SORT
-    public void selectionSort(List<LibraryItem> items) {
+    // 3. SELECTION SORT: Updated for dynamic fields
+    public void selectionSort(List<LibraryItem> items, String field) {
         for (int i = 0; i < items.size() - 1; i++) {
-            int min = i;
+            int minIdx = i;
             for (int j = i + 1; j < items.size(); j++) {
-                if (items.get(j).getTitle()
-                        .compareToIgnoreCase(items.get(min).getTitle()) < 0) {
-                    min = j;
+                if (getFieldValue(items.get(j), field)
+                        .compareToIgnoreCase(getFieldValue(items.get(minIdx), field)) < 0) {
+                    minIdx = j;
                 }
             }
-            Collections.swap(items, i, min);
+            Collections.swap(items, i, minIdx);
         }
     }
 
-    // MERGE SORT
-    public void mergeSort(List<LibraryItem> items) {
+    // 4. MERGE SORT: Added back and updated for dynamic fields
+    public void mergeSort(List<LibraryItem> items, String field) {
         if (items.size() > 1) {
             int mid = items.size() / 2;
             List<LibraryItem> left = new ArrayList<>(items.subList(0, mid));
             List<LibraryItem> right = new ArrayList<>(items.subList(mid, items.size()));
 
-            mergeSort(left);
-            mergeSort(right);
+            mergeSort(left, field);
+            mergeSort(right, field);
 
-            merge(items, left, right);
+            merge(items, left, right, field);
         }
     }
 
-    private void merge(List<LibraryItem> items, List<LibraryItem> left, List<LibraryItem> right) {
+    private void merge(List<LibraryItem> items, List<LibraryItem> left, List<LibraryItem> right, String field) {
         int i = 0, j = 0, k = 0;
-
         while (i < left.size() && j < right.size()) {
-            if (left.get(i).getTitle()
-                    .compareToIgnoreCase(right.get(j).getTitle()) <= 0) {
+            if (getFieldValue(left.get(i), field).compareToIgnoreCase(getFieldValue(right.get(j), field)) <= 0) {
                 items.set(k++, left.get(i++));
             } else {
                 items.set(k++, right.get(j++));
             }
         }
-
         while (i < left.size())
             items.set(k++, left.get(i++));
         while (j < right.size())
             items.set(k++, right.get(j++));
+    }
+
+    // Helper: Allows the algorithms to look at Title, Author, or Year
+    private String getFieldValue(LibraryItem item, String field) {
+        switch (field) {
+            case "Author":
+                return item.getAuthor();
+            case "Year":
+                return String.valueOf(item.getYear());
+            default:
+                return item.getTitle();
+        }
     }
 }

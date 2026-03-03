@@ -1,7 +1,6 @@
 package gui;
 
 import model.*;
-import utils.IdGenerator;
 import utils.FileHandler;
 import javax.swing.*;
 import java.awt.*;
@@ -41,52 +40,112 @@ public class AdminPanel extends JPanel {
     }
 
     private void addItem() {
-        // 1. Collect inputs
-        String title = JOptionPane.showInputDialog(this, "Enter title:");
-        if (title == null || title.trim().isEmpty())
-            return;
+        JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "Add New Item", true);
 
-        String author = JOptionPane.showInputDialog(this, "Enter author:");
-        if (author == null || author.trim().isEmpty())
-            return;
+        // 1. Create a main panel with EmptyBorder for "Edge Spacing"
+        JPanel mainPanel = new JPanel(new GridLayout(0, 2, 15, 15)); // 0 rows = flexible, 15px gaps
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Padding: top, left, bottom, right
 
-        String yearStr = JOptionPane.showInputDialog(this, "Enter year (e.g., 2024):");
-        if (yearStr == null)
-            return;
+        // Form Components
+        String[] types = { "Book", "Magazine", "Journal" };
+        JComboBox<String> typeCombo = new JComboBox<>(types);
+        JTextField titleField = new JTextField();
+        JTextField authorField = new JTextField();
+        JTextField yearField = new JTextField();
+        JTextField isbnField = new JTextField();
+        JTextField extraField = new JTextField();
 
-        String isbn = JOptionPane.showInputDialog(this, "Enter ISBN (Optional):");
-        // If user cancels (null) or leaves it blank, default to "N/A"
-        if (isbn == null || isbn.trim().isEmpty())
-            isbn = "N/A";
+        JLabel isbnLabel = new JLabel("ISBN:");
+        JLabel extraLabel = new JLabel("Genre:");
 
-        String genre = JOptionPane.showInputDialog(this, "Enter genre/description:");
-        if (genre == null)
-            genre = "N/A"; // Default if they leave it blank
+        // 2. Logic to Hide/Show ISBN and change labels
+        typeCombo.addActionListener(e -> {
+            String selected = (String) typeCombo.getSelectedItem();
+            boolean isBook = "Book".equals(selected);
 
-        try {
-            // 2. Parse the year safely
-            int year = Integer.parseInt(yearStr.trim());
+            // Toggle ISBN visibility
+            isbnLabel.setVisible(isBook);
+            isbnField.setVisible(isBook);
 
-            // 3. Create the item with real data instead of hardcoded 2024
-            LibraryItem item = new Book(
-                    IdGenerator.generateID(),
-                    title,
-                    author,
-                    year,
-                    isbn,
-                    genre,
-                    1);
+            // Update bottom label
+            if (isBook)
+                extraLabel.setText("Genre:");
+            else if ("Magazine".equals(selected))
+                extraLabel.setText("Issue #:");
+            else
+                extraLabel.setText("Volume #:");
 
-            // 4. Add to database and SAVE to file
-            database.addItem(item);
-            FileHandler.saveData(database); // IMPORTANT: Saves to your .dat or .txt file
+            dialog.pack(); // Adjust window size after hiding/showing components
+        });
 
-            JOptionPane.showMessageDialog(this, "Item '" + title + "' added successfully.");
+        // Add components to panel
+        mainPanel.add(new JLabel("Item Type:"));
+        mainPanel.add(typeCombo);
+        mainPanel.add(new JLabel("Title:"));
+        mainPanel.add(titleField);
+        mainPanel.add(new JLabel("Author:"));
+        mainPanel.add(authorField);
+        mainPanel.add(new JLabel("Year:"));
+        mainPanel.add(yearField);
+        mainPanel.add(isbnLabel);
+        mainPanel.add(isbnField);
+        mainPanel.add(extraLabel);
+        mainPanel.add(extraField);
 
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Invalid Year! Please enter a numeric value (e.g., 2024).",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        JButton okBtn = new JButton("Save");
+        JButton cancelBtn = new JButton("Cancel");
+        mainPanel.add(okBtn);
+        mainPanel.add(cancelBtn);
+
+        dialog.add(mainPanel);
+        dialog.getRootPane().setDefaultButton(okBtn); // Enter key shortcut
+
+        // 3. Logic for the OK button (remains mostly same as previous fix)
+        okBtn.addActionListener(e -> {
+            try {
+                // These are the variables you declared
+                String type = (String) typeCombo.getSelectedItem();
+                String title = titleField.getText().trim();
+                String author = authorField.getText().trim();
+                int year = Integer.parseInt(yearField.getText().trim());
+                String extra = extraField.getText().trim();
+
+                LibraryItem newItem;
+
+                // NOW WE USE 'type' - This clears the warning!
+                if ("Book".equals(type)) {
+                    String isbn = isbnField.getText().trim();
+                    // ISBN Validation
+                    if (!isbn.equalsIgnoreCase("N/A") && !isbn.matches("\\d{10}|\\d{13}")) {
+                        throw new Exception("ISBN must be 10 or 13 digits.");
+                    }
+                    newItem = new Book(utils.IdGenerator.generateID(), title, author, year, isbn, extra, 1);
+                } else if ("Magazine".equals(type)) {
+                    int issue = Integer.parseInt(extra);
+                    newItem = new Magazine(utils.IdGenerator.generateID(), title, author, year, issue);
+                } else {
+                    int vol = Integer.parseInt(extra);
+                    newItem = new Journal(utils.IdGenerator.generateID(), title, author, year, vol);
+                }
+
+                database.addItem(newItem);
+                utils.FileHandler.saveData(database);
+                dialog.dispose();
+                JOptionPane.showMessageDialog(this, type + " added successfully!");
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(dialog, "Year and Issue/Volume must be numbers!");
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(dialog, "Error: " + ex.getMessage());
+            }
+        });
+
+        cancelBtn.addActionListener(e -> dialog.dispose());
+
+        dialog.setMinimumSize(new Dimension(350, 400)); // Make it wider and taller
+        dialog.pack();
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
     }
 
     private void deleteItem() {

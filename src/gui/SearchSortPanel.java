@@ -6,6 +6,7 @@ import model.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.util.List;
 
 public class SearchSortPanel extends JPanel {
 
@@ -15,6 +16,8 @@ public class SearchSortPanel extends JPanel {
     private DefaultTableModel model;
     private JTextField searchField;
     private JComboBox<String> sortCombo;
+    private JComboBox<String> fieldCombo; // Added for Title/Author/Year
+    private String lastSortedField = ""; // Tracks sorting state for Binary Search
 
     public SearchSortPanel(LibraryDatabase database) {
         this.database = database;
@@ -26,18 +29,22 @@ public class SearchSortPanel extends JPanel {
         searchField = new JTextField(15);
         JButton searchBtn = new JButton("Search");
 
-        sortCombo = new JComboBox<>(new String[]{"Selection Sort", "Merge Sort"});
+        // UI for selecting what to sort/search by
+        fieldCombo = new JComboBox<>(new String[] { "Title", "Author", "Year" });
+        sortCombo = new JComboBox<>(new String[] { "Selection Sort", "Merge Sort" });
         JButton sortBtn = new JButton("Sort");
 
-        top.add(new JLabel("Search Title:"));
+        top.add(new JLabel("Search:"));
         top.add(searchField);
-        top.add(searchBtn);
+        top.add(new JLabel("By:"));
+        top.add(fieldCombo);
+        top.add(new JLabel("Algorithm:"));
         top.add(sortCombo);
         top.add(sortBtn);
+        top.add(searchBtn);
 
         model = new DefaultTableModel(
-                new String[]{"ID", "Title", "Author", "Year"}, 0
-        );
+                new String[] { "ID", "Title", "Author", "Year" }, 0);
         table = new JTable(model);
 
         add(top, BorderLayout.NORTH);
@@ -45,40 +52,61 @@ public class SearchSortPanel extends JPanel {
 
         searchBtn.addActionListener(e -> search());
         sortBtn.addActionListener(e -> sort());
+
+        refreshTable(); // Show items on startup
     }
 
     private void search() {
-        LibraryItem item = engine.linearSearch(
-                database.getItems(),
-                searchField.getText()
-        );
-
+        String query = searchField.getText().trim();
+        String field = (String) fieldCombo.getSelectedItem(); // e.g., "Author"
         model.setRowCount(0);
 
-        if (item != null) {
-            model.addRow(new Object[]{
-                    item.getId(),
-                    item.getTitle(),
-                    item.getAuthor(),
-                    item.getYear()
-            });
+        if (query.isEmpty()) {
+            refreshTable();
+            return;
+        }
+
+        // Binary Search: Best for exact matches on sorted data
+        if (lastSortedField.equals(field)) {
+            LibraryItem item = engine.binarySearch(database.getItems(), query, field);
+            if (item != null)
+                addRowToTable(item);
+        }
+        // Linear Search: Best for partial "keyword" matches across any field
+        else {
+            // PASS THE 'field' VARIABLE HERE
+            List<LibraryItem> results = engine.linearSearch(database.getItems(), query, field);
+            for (LibraryItem item : results) {
+                addRowToTable(item);
+            }
         }
     }
 
     private void sort() {
-        if (sortCombo.getSelectedIndex() == 0)
-            engine.selectionSort(database.getItems());
-        else
-            engine.mergeSort(database.getItems());
+        String field = (String) fieldCombo.getSelectedItem();
 
+        if (sortCombo.getSelectedIndex() == 0)
+            engine.selectionSort(database.getItems(), field);
+        else
+            engine.mergeSort(database.getItems(), field);
+
+        lastSortedField = field; // Update state so search() knows list is sorted
+        refreshTable();
+    }
+
+    private void refreshTable() {
         model.setRowCount(0);
         for (LibraryItem item : database.getItems()) {
-            model.addRow(new Object[]{
-                    item.getId(),
-                    item.getTitle(),
-                    item.getAuthor(),
-                    item.getYear()
-            });
+            addRowToTable(item);
         }
+    }
+
+    private void addRowToTable(LibraryItem item) {
+        model.addRow(new Object[] {
+                item.getId(),
+                item.getTitle(),
+                item.getAuthor(),
+                item.getYear()
+        });
     }
 }
