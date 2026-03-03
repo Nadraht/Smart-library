@@ -3,7 +3,6 @@ package gui;
 import model.LibraryDatabase;
 import utils.FileHandler;
 import utils.OverdueReminder;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,6 +10,7 @@ public class MainWindow extends JFrame {
 
     private LibraryDatabase database;
     private JTabbedPane tabbedPane;
+    private JLabel statusLabel; // New field for the Status Bar
 
     public MainWindow() {
         database = new LibraryDatabase();
@@ -29,24 +29,29 @@ public class MainWindow extends JFrame {
 
     private void initUI() {
         tabbedPane = new JTabbedPane();
+        statusLabel = new JLabel(" System Ready"); // Initialize status bar
+        statusLabel.setBorder(BorderFactory.createEtchedBorder());
 
-        // 1. Create the panel and keep a reference to it
         ViewPanel viewPanel = new ViewPanel(database);
 
-        // 2. Add your panels
         tabbedPane.addTab("View Items", viewPanel);
         tabbedPane.addTab("Borrow / Return", new BorrowPanel(database));
         tabbedPane.addTab("Admin", new AdminPanel(database));
         tabbedPane.addTab("Search & Sort", new SearchSortPanel(database));
 
-        // 3. ADD THIS LISTENER: It triggers the refresh when the tab is clicked
         tabbedPane.addChangeListener(e -> {
+            // Update the status bar text based on the selected tab
+            int index = tabbedPane.getSelectedIndex();
+            String tabTitle = tabbedPane.getTitleAt(index);
+            statusLabel.setText(" Mode: " + tabTitle);
+
             if (tabbedPane.getSelectedComponent() instanceof ViewPanel) {
                 ((ViewPanel) tabbedPane.getSelectedComponent()).refreshTable();
             }
         });
 
         add(tabbedPane, BorderLayout.CENTER);
+        add(statusLabel, BorderLayout.SOUTH); // Add the status bar to the bottom
     }
 
     public static void main(String[] args) {

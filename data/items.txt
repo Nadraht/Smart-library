@@ -1,5 +1,6 @@
+MAGAZINE|cf203689-bfbf-40ec-ad90-549fa1b12242|Chanel Bags|Coco Chanel|2010|11
 BOOK|6c764e0e-0f1b-4af6-aeb9-8566a3486250|English Language|Me|2023|N/A|Language|1
-BOOK|2b86a5d9-e2a7-43d9-acbd-d2ca1422722a|Introduction|N A|2026|N/A|Educational|1
 BOOK|7c613b0a-7b1a-409a-9b28-9b02eef7cc9f|French Dictionary|Jamie G|1987|N/A|Language|1
-BOOK|baab9274-62d7-4b9e-ad66-536b554984b0|Cos 202|Samuel Ubaru|2025|unknown|Educational|1
 BOOK|cae58a6e-135a-47c6-9101-06b13ab6f873|Geology|George T.F|1963|1242345260|Educational|1
+BOOK|2b86a5d9-e2a7-43d9-acbd-d2ca1422722a|Introduction|N A|2026|N/A|Educational|1
+BOOK|baab9274-62d7-4b9e-ad66-536b554984b0|Cos 202|Samuel Ubaru|2025|unknown|Educational|1

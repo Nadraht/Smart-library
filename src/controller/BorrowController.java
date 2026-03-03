@@ -70,10 +70,14 @@ public class BorrowController {
     }
 
     private LibraryItem findItem(String itemId) {
-        for (LibraryItem i : database.getItems()) {
-            if (i.getId().equals(itemId))
-                return i;
-        }
-        return null;
+        return recursiveFindItem(database.getItems(), itemId, 0);
+    }
+
+    private LibraryItem recursiveFindItem(List<LibraryItem> items, String id, int index) {
+        if (index >= items.size())
+            return null; // Base case: not found
+        if (items.get(index).getId().equals(id))
+            return items.get(index); // Base case: found
+        return recursiveFindItem(items, id, index + 1); // Recursive call
     }
 }

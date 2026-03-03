@@ -4,6 +4,7 @@ import model.*;
 import utils.FileHandler;
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 import java.util.Stack;
 
 public class AdminPanel extends JPanel {
@@ -23,6 +24,7 @@ public class AdminPanel extends JPanel {
         JButton exportBtn = new JButton("Export Data");
         JButton importBtn = new JButton("Import Data");
         JButton reportBtn = new JButton("Generate Reports");
+        JButton addUserBtn = new JButton("Register User"); // New button
 
         add(addBtn);
         add(delBtn);
@@ -30,6 +32,7 @@ public class AdminPanel extends JPanel {
         add(importBtn);
         add(exportBtn);
         add(reportBtn);
+        add(addUserBtn);
 
         addBtn.addActionListener(e -> addItem());
         delBtn.addActionListener(e -> deleteItem());
@@ -37,6 +40,7 @@ public class AdminPanel extends JPanel {
         importBtn.addActionListener(e -> importData());
         exportBtn.addActionListener(e -> exportData());
         reportBtn.addActionListener(e -> generateReports());
+        addUserBtn.addActionListener(e -> registerUser());
     }
 
     private void addItem() {
@@ -203,5 +207,84 @@ public class AdminPanel extends JPanel {
                 .forEach((k, v) -> sb.append(k).append(": ").append(v).append("\n"));
 
         JOptionPane.showMessageDialog(this, sb.toString());
+    }
+
+    private void registerUser() {
+        JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "Register New User", true);
+        // Use a vertical BoxLayout for better spacing
+        JPanel mainPanel = new JPanel(new GridBagLayout());
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5); // Spacing between rows
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        JTextField nameField = new JTextField(15);
+        JTextField idField = new JTextField(15);
+        JLabel suggestionLabel = new JLabel(" "); // For ID suggestions
+        suggestionLabel.setForeground(Color.BLUE);
+
+        // Form Rows
+        // Row 0: Name Label
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        mainPanel.add(new JLabel("Full Name:"), gbc);
+
+        // Row 1: Name Field
+        gbc.gridy = 1;
+        mainPanel.add(nameField, gbc);
+
+        // Row 2: ID Label
+        gbc.gridy = 2;
+        mainPanel.add(new JLabel("Desired User ID:"), gbc);
+
+        // Row 3: ID Field
+        gbc.gridy = 3;
+        mainPanel.add(idField, gbc);
+
+        // Row 4: Suggestions
+        gbc.gridy = 4;
+        mainPanel.add(suggestionLabel, gbc);
+
+        // Row 5: Buttons
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JButton saveBtn = new JButton("Register");
+        JButton cancelBtn = new JButton("Cancel");
+        buttonPanel.add(saveBtn);
+        buttonPanel.add(cancelBtn);
+
+        gbc.gridy = 5;
+        mainPanel.add(buttonPanel, gbc);
+
+        // Logic
+        cancelBtn.addActionListener(e -> dialog.dispose());
+
+        saveBtn.addActionListener(e -> {
+            String id = idField.getText().trim();
+            String name = nameField.getText().trim();
+
+            if (id.isEmpty() || name.isEmpty()) {
+                JOptionPane.showMessageDialog(dialog, "All fields required!");
+                return;
+            }
+
+            // Check if ID is taken
+            if (database.getUser(id) != null) {
+                String suggestion = name.toLowerCase().replaceAll("\\s+", "") + (new Random().nextInt(900) + 100);
+                suggestionLabel.setText("ID taken! Try: " + suggestion);
+                dialog.pack(); // Adjust size to show suggestion
+                return;
+            }
+
+            database.addUser(new UserAccount(id, name));
+            utils.FileHandler.saveData(database);
+            dialog.dispose();
+            JOptionPane.showMessageDialog(this, "Registration Successful!");
+        });
+
+        dialog.add(mainPanel);
+        dialog.pack(); // Automatically sizes window perfectly based on components
+        dialog.setMinimumSize(new Dimension(300, 250)); // Sets a better default size
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
     }
 }

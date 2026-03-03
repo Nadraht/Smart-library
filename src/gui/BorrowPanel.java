@@ -13,8 +13,10 @@ public class BorrowPanel extends JPanel {
     private JButton borrowBtn, returnBtn;
 
     private BorrowController controller;
+    private LibraryDatabase database;
 
     public BorrowPanel(LibraryDatabase database) {
+        this.database = database;
         controller = new BorrowController(database);
 
         setLayout(new GridBagLayout());
@@ -57,29 +59,42 @@ public class BorrowPanel extends JPanel {
 
     private void addListeners() {
         borrowBtn.addActionListener(e -> {
-            if (userIdField.getText().isEmpty() || itemIdField.getText().isEmpty()) {
+            String uId = userIdField.getText().trim();
+            String iId = itemIdField.getText().trim();
+
+            if (uId.isEmpty() || iId.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Fields cannot be empty!");
                 return;
             }
-            boolean success = controller.borrowItem(
-                    userIdField.getText(),
-                    itemIdField.getText());
 
-            JOptionPane.showMessageDialog(this,
-                    success ? "Borrow successful!" : "Item unavailable, added to queue.");
+            // NEW CHECK: Specifically check if user exists first
+            if (database.getUser(uId) == null) {
+                JOptionPane.showMessageDialog(this, "User ID not available, register user.");
+                return;
+            }
+
+            boolean success = controller.borrowItem(uId, iId);
+            JOptionPane.showMessageDialog(this, success ? "Borrow successful!" : "Item unavailable, added to queue.");
         });
 
         returnBtn.addActionListener(e -> {
-            if (userIdField.getText().isEmpty() || itemIdField.getText().isEmpty()) {
+            String uId = userIdField.getText().trim();
+            String iId = itemIdField.getText().trim();
+
+            if (uId.isEmpty() || iId.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Fields cannot be empty!");
                 return;
             }
-            boolean success = controller.returnItem(
-                    userIdField.getText(),
-                    itemIdField.getText());
 
+            // Check if user exists before attempting return
+            if (database.getUser(uId) == null) {
+                JOptionPane.showMessageDialog(this, "User ID not found.");
+                return;
+            }
+
+            boolean success = controller.returnItem(uId, iId);
             JOptionPane.showMessageDialog(this,
-                    success ? "Return successful!" : "Return failed.");
+                    success ? "Return successful!" : "Return failed: Check Item ID or history.");
         });
     }
 }
