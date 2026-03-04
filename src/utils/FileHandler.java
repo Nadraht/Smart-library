@@ -7,17 +7,20 @@ import java.util.*;
 public class FileHandler {
     private static final String ITEMS_FILE = "data/items.txt";
     private static final String USERS_FILE = "data/users.txt";
+    private static final String BORROW_FILE = "data/borrow_records.txt";
 
     // SAVE DATA
     public static void saveData(LibraryDatabase db) {
         saveItems(db.getItems());
         saveUsers(db.getUsers());
+        saveBorrowRecords(db.getUsers());
     }
 
     // LOAD DATA
     public static void loadData(LibraryDatabase db) {
         loadItems(db);
         loadUsers(db);
+        loadBorrowRecords(db);
     }
 
     // ---------------- SAVE METHODS ----------------
@@ -56,6 +59,18 @@ public class FileHandler {
         try (PrintWriter writer = new PrintWriter(new FileWriter(USERS_FILE))) {
             for (UserAccount user : users) {
                 writer.println(user.getUserId() + "|" + user.getName());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void saveBorrowRecords(List<UserAccount> users) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(BORROW_FILE))) {
+            for (UserAccount user : users) {
+                for (BorrowRecord record : user.getBorrowHistory()) {
+                    writer.println(record.toFileString());
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -118,6 +133,34 @@ public class FileHandler {
                 db.addUser(new UserAccount(parts[0], parts[1]));
             }
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void loadBorrowRecords(LibraryDatabase db) {
+        File file = new File(BORROW_FILE);
+        if (!file.exists())
+            return;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                BorrowRecord record = BorrowRecord.fromFileString(line, db);
+                String userId = BorrowRecord.getUserIdFromLine(line);
+
+                UserAccount user = db.findUser(userId);
+                if (record != null && user != null) {
+                    // Add to User history
+                    user.addBorrowRecord(record);
+                    // Add to Item history
+                    record.getItem().getBorrowHistory().add(record);
+
+                    // Update availability: if no return date, it's still out
+                    boolean isReturned = record.getReturnDate() != null;
+                    record.getItem().setAvailable(isReturned);
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

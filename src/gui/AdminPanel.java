@@ -21,24 +21,18 @@ public class AdminPanel extends JPanel {
         JButton addBtn = new JButton("Add Item");
         JButton delBtn = new JButton("Delete Item");
         JButton undoBtn = new JButton("Undo");
-        JButton exportBtn = new JButton("Export Data");
-        JButton importBtn = new JButton("Import Data");
         JButton reportBtn = new JButton("Generate Reports");
         JButton addUserBtn = new JButton("Register User"); // New button
 
         add(addBtn);
         add(delBtn);
         add(undoBtn);
-        add(importBtn);
-        add(exportBtn);
         add(reportBtn);
         add(addUserBtn);
 
         addBtn.addActionListener(e -> addItem());
         delBtn.addActionListener(e -> deleteItem());
         undoBtn.addActionListener(e -> undoLastAction());
-        importBtn.addActionListener(e -> importData());
-        exportBtn.addActionListener(e -> exportData());
         reportBtn.addActionListener(e -> generateReports());
         addUserBtn.addActionListener(e -> registerUser());
     }
@@ -174,20 +168,6 @@ public class AdminPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "Undo successful.");
         } else {
             JOptionPane.showMessageDialog(this, "Nothing to undo.");
-        }
-    }
-
-    private void exportData() {
-        JFileChooser chooser = new JFileChooser();
-        if (chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-            JOptionPane.showMessageDialog(this, "Export successful!");
-        }
-    }
-
-    private void importData() {
-        JFileChooser chooser = new JFileChooser();
-        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            JOptionPane.showMessageDialog(this, "Import successful!");
         }
     }
 

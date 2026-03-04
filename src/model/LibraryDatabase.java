@@ -5,7 +5,7 @@ import java.util.*;
 public class LibraryDatabase {
     private List<LibraryItem> items;
     private List<UserAccount> users;
-    private Queue<LibraryItem> reservationQueue;
+    private Queue<Reservation> reservationQueue;
     private LibraryItem[] recentCache = new LibraryItem[5];
 
     public LibraryDatabase() {
@@ -40,11 +40,29 @@ public class LibraryDatabase {
         return null; // Returns null if the User ID isn't found
     }
 
+    public LibraryItem findItem(String itemId) {
+        for (LibraryItem item : items) {
+            if (item.getId().equals(itemId)) {
+                return item;
+            }
+        }
+        return null; // Return null if the book/item isn't found
+    }
+
+    public UserAccount findUser(String userId) {
+        for (UserAccount user : users) {
+            if (user.getUserId().equals(userId)) {
+                return user;
+            }
+        }
+        return null; // Return null if the user isn't found
+    }
+
     public List<UserAccount> getUsers() {
         return users;
     }
 
-    public Queue<LibraryItem> getReservationQueue() {
+    public Queue<Reservation> getReservationQueue() {
         return reservationQueue;
     }
 
@@ -54,4 +72,5 @@ public class LibraryDatabase {
         }
         recentCache[0] = item;
     }
+
 }

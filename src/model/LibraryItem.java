@@ -1,5 +1,8 @@
 package model;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public abstract class LibraryItem {
 
     protected String id;
@@ -7,6 +10,7 @@ public abstract class LibraryItem {
     protected String author;
     protected int year;
     protected boolean isAvailable;
+    private List<BorrowRecord> borrowHistory;
 
     public LibraryItem(String id, String title, String author, int year) {
         this.id = id;
@@ -14,6 +18,7 @@ public abstract class LibraryItem {
         this.author = author;
         this.year = year;
         this.isAvailable = true;
+        this.borrowHistory = new ArrayList<>();
     }
 
     public String getId() {
@@ -38,6 +43,10 @@ public abstract class LibraryItem {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    public List<BorrowRecord> getBorrowHistory() {
+        return borrowHistory;
     }
 
     public abstract void displayInfo();

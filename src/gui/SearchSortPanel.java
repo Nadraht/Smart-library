@@ -44,8 +44,31 @@ public class SearchSortPanel extends JPanel {
         top.add(searchBtn);
 
         model = new DefaultTableModel(
-                new String[] { "ID", "Title", "Author", "Year" }, 0);
+                new String[] { "ID", "Title", "Author", "Year" }, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // This makes the whole table read-only
+            }
+        };
         table = new JTable(model);
+        table.setCellSelectionEnabled(true);
+
+        // Create a popup menu
+        JPopupMenu popupMenu = new JPopupMenu();
+        JMenuItem copyItem = new JMenuItem("Copy");
+
+        copyItem.addActionListener(e -> {
+            int row = table.getSelectedRow();
+            if (row != -1) {
+                // Get ID from the first column (index 0)
+                String id = table.getValueAt(row, 0).toString();
+                java.awt.datatransfer.StringSelection selection = new java.awt.datatransfer.StringSelection(id);
+                java.awt.Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, selection);
+            }
+        });
+
+        popupMenu.add(copyItem);
+        table.setComponentPopupMenu(popupMenu);
 
         add(top, BorderLayout.NORTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
