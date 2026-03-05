@@ -57,7 +57,10 @@ The system demonstrates key programming concepts including:
   * Merge Sort
 * Binary search for optimized searching on sorted data
 * Linear search for optimized keyword searching
+<<<<<<< HEAD
 
+=======
+>>>>>>> 57d425d268f36f261031b54ee9ece47dc954caa6
 
 ## Reservation System
 
@@ -166,7 +169,7 @@ This launches the Smart Library GUI.
 
 
 # Project Structure
-
+```
 smart-library
 │
 ├── data
@@ -207,9 +210,13 @@ smart-library
 └── uml diagram
 │
 └── README.md
+<<<<<<< HEAD
 
 # UML Diagram
 ![UML Diagram](/uml%20diagram/Smart%20Library.drawio.png)
+=======
+```
+>>>>>>> 57d425d268f36f261031b54ee9ece47dc954caa6
 
 # Screenshots
 
