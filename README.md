@@ -210,13 +210,9 @@ smart-library
 └── uml diagram
 │
 └── README.md
-<<<<<<< HEAD
 
 # UML Diagram
 ![UML Diagram](/uml%20diagram/Smart%20Library.drawio.png)
-=======
-```
->>>>>>> 57d425d268f36f261031b54ee9ece47dc954caa6
 
 # Screenshots
 
