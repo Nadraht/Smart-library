@@ -40,7 +40,7 @@ public class AdminPanel extends JPanel {
     private void addItem() {
         JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "Add New Item", true);
 
-        // 1. Create a main panel with EmptyBorder for "Edge Spacing"
+        // Create a main panel with EmptyBorder for "Edge Spacing"
         JPanel mainPanel = new JPanel(new GridLayout(0, 2, 15, 15)); // 0 rows = flexible, 15px gaps
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Padding: top, left, bottom, right
 
@@ -56,7 +56,7 @@ public class AdminPanel extends JPanel {
         JLabel isbnLabel = new JLabel("ISBN:");
         JLabel extraLabel = new JLabel("Genre:");
 
-        // 2. Logic to Hide/Show ISBN and change labels
+        // Logic to Hide/Show ISBN and change labels
         typeCombo.addActionListener(e -> {
             String selected = (String) typeCombo.getSelectedItem();
             boolean isBook = "Book".equals(selected);
@@ -98,7 +98,7 @@ public class AdminPanel extends JPanel {
         dialog.add(mainPanel);
         dialog.getRootPane().setDefaultButton(okBtn); // Enter key shortcut
 
-        // 3. Logic for the OK button (remains mostly same as previous fix)
+        // Logic for the OK button (remains mostly same as previous fix)
         okBtn.addActionListener(e -> {
             try {
                 // These are the variables you declared

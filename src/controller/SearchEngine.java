@@ -5,7 +5,7 @@ import java.util.*;
 
 public class SearchEngine {
 
-    // 1. KEYWORD LINEAR SEARCH: Fixed to find partial matches (keywords)
+    // KEYWORD LINEAR SEARCH: Fixed to find partial matches (keywords)
     // UPDATED LINEAR SEARCH: Matches if the chosen field contains the keyword
     public List<LibraryItem> linearSearch(List<LibraryItem> items, String keyword, String field) {
         List<LibraryItem> results = new ArrayList<>();
@@ -21,7 +21,7 @@ public class SearchEngine {
         return results;
     }
 
-    // 2. BINARY SEARCH: Works on Title, Author, or Year (if sorted)
+    // BINARY SEARCH: Works on Title, Author, or Year (if sorted)
     public LibraryItem binarySearch(List<LibraryItem> items, String target, String field) {
         int left = 0, right = items.size() - 1;
         while (left <= right) {
@@ -39,7 +39,7 @@ public class SearchEngine {
         return null;
     }
 
-    // 3. SELECTION SORT: Updated for dynamic fields
+    // SELECTION SORT: Updated for dynamic fields
     public void selectionSort(List<LibraryItem> items, String field) {
         for (int i = 0; i < items.size() - 1; i++) {
             int minIdx = i;
@@ -53,7 +53,7 @@ public class SearchEngine {
         }
     }
 
-    // 4. MERGE SORT: Added back and updated for dynamic fields
+    // MERGE SORT: Added back and updated for dynamic fields
     public void mergeSort(List<LibraryItem> items, String field) {
         if (items.size() > 1) {
             int mid = items.size() / 2;
