@@ -171,6 +171,8 @@ smart-library
 │   ├── users.txt
 │   └── borrow_records.txt
 │
+├── screenshots
+│
 ├── src
 │   ├── controller
 │   │   ├── BorrowController.java
