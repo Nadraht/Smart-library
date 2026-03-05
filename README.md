@@ -56,6 +56,7 @@ The system demonstrates key programming concepts including:
   * Selection Sort
   * Merge Sort
 * Binary search for optimized searching on sorted data
+* Linear search for optimized keyword searching
 
 ## Reservation System
 
