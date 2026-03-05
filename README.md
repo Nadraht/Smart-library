@@ -163,7 +163,7 @@ This launches the Smart Library GUI.
 
 
 # Project Structure
-
+```
 smart-library
 │
 ├── data
@@ -202,7 +202,7 @@ smart-library
 │       └── OverdueReminder.java
 │
 └── README.md
-
+```
 
 # Screenshots
 
