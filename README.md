@@ -56,6 +56,8 @@ The system demonstrates key programming concepts including:
   * Selection Sort
   * Merge Sort
 * Binary search for optimized searching on sorted data
+* Linear search for optimized keyword searching
+
 
 ## Reservation System
 
@@ -94,6 +96,7 @@ Files used:
 | File I/O        | Data persistence          |
 | Data Structures | Lists, Queues, Maps       |
 | GitHub          | Version control           |
+| Draw.io         | UML Diagram               |
 
 Development Tools:
 
@@ -200,9 +203,13 @@ smart-library
 │       ├── ReportGenerator.java
 │       ├── IdGenerator.java
 │       └── OverdueReminder.java
+|
+└── uml diagram
 │
 └── README.md
 
+# UML Diagram
+![UML Diagram](/uml%20diagram/Smart%20Library.drawio.png)
 
 # Screenshots
 
