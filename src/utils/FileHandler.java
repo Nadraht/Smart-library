@@ -86,35 +86,35 @@ public class FileHandler {
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
-
             while ((line = br.readLine()) != null) {
+                if (line.trim().isEmpty())
+                    continue; // Skip blank lines
                 String[] parts = line.split("\\|");
 
-                switch (parts[0]) {
-                    case "BOOK":
-                        db.addItem(new Book(
-                                parts[1], parts[2], parts[3],
-                                Integer.parseInt(parts[4]),
-                                parts[5], parts[6],
-                                Integer.parseInt(parts[7])));
-                        break;
-
-                    case "MAGAZINE":
-                        db.addItem(new Magazine(
-                                parts[1], parts[2], parts[3],
-                                Integer.parseInt(parts[4]),
-                                Integer.parseInt(parts[5])));
-                        break;
-
-                    case "JOURNAL":
-                        db.addItem(new Journal(
-                                parts[1], parts[2], parts[3],
-                                Integer.parseInt(parts[4]),
-                                Integer.parseInt(parts[5])));
-                        break;
+                try {
+                    switch (parts[0]) {
+                        case "BOOK":
+                            db.addItem(new Book(parts[1], parts[2], parts[3],
+                                    Integer.parseInt(parts[4]), parts[5], parts[6],
+                                    Integer.parseInt(parts[7])));
+                            break;
+                        case "MAGAZINE":
+                            // If your Magazine constructor requires an INT, use this:
+                            int issue = parts[5].replaceAll("[^0-9]", "").isEmpty() ? 0
+                                    : Integer.parseInt(parts[5].replaceAll("[^0-9]", ""));
+                            db.addItem(new Magazine(parts[1], parts[2], parts[3], Integer.parseInt(parts[4]), issue));
+                            break;
+                        case "JOURNAL":
+                            // If your Journal constructor requires an INT, use this:
+                            int vol = parts[5].replaceAll("[^0-9]", "").isEmpty() ? 0
+                                    : Integer.parseInt(parts[5].replaceAll("[^0-9]", ""));
+                            db.addItem(new Journal(parts[1], parts[2], parts[3], Integer.parseInt(parts[4]), vol));
+                            break;
+                    }
+                } catch (Exception e) {
+                    System.err.println("Skipping bad line: " + line);
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }

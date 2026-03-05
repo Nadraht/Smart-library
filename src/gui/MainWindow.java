@@ -14,7 +14,12 @@ public class MainWindow extends JFrame {
 
     public MainWindow() {
         database = new LibraryDatabase();
-        FileHandler.loadData(database);
+        try {
+            FileHandler.loadData(database);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error loading items.txt! Check file formatting.");
+            e.printStackTrace();
+        }
         OverdueReminder.startReminder(database);
 
         setTitle("Smart Library Circulation & Automation System");

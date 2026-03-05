@@ -90,19 +90,21 @@ public class SearchSortPanel extends JPanel {
         }
 
         // Binary Search: Best for exact matches on sorted data
-        if (lastSortedField.equals(field)) {
+        // Always use Linear Search to allow for keyword/partial matches.
+        if (lastSortedField.equals(field) && query.length() > 10) {
             LibraryItem item = engine.binarySearch(database.getItems(), query, field);
-            if (item != null)
+            if (item != null) {
                 addRowToTable(item);
-        }
-        // Linear Search: Best for partial "keyword" matches across any field
-        else {
-            // PASS THE 'field' VARIABLE HERE
-            List<LibraryItem> results = engine.linearSearch(database.getItems(), query, field);
-            for (LibraryItem item : results) {
-                addRowToTable(item);
+                return; // Exit early if exact match found
             }
         }
+
+        // Fallback to Linear Search for keyword matches (e.g., "Gatsby")
+        List<LibraryItem> results = engine.linearSearch(database.getItems(), query, field);
+        for (LibraryItem item : results) {
+            addRowToTable(item);
+        }
+
     }
 
     private void sort() {

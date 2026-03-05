@@ -4,3 +4,228 @@ BOOK|7c613b0a-7b1a-409a-9b28-9b02eef7cc9f|French Dictionary|Jamie G|1987|N/A|Lan
 BOOK|cae58a6e-135a-47c6-9101-06b13ab6f873|Geology|George T.F|1963|1242345260|Educational|1
 BOOK|2b86a5d9-e2a7-43d9-acbd-d2ca1422722a|Introduction|N A|2026|N/A|Educational|1
 BOOK|baab9274-62d7-4b9e-ad66-536b554984b0|Cos 202|Samuel Ubaru|2025|unknown|Educational|1
+BOOK|b1f7d4b0-2e6c-44a1-80d1-5b2f3e65fa00|Mathematics 101|Alice B|2019|9781234567890|Mathematics|3
+BOOK|a2d4e5f6-7b8c-4d9f-a1e2-5f6d7c8b9a0b|Physics Basics|Bob S|2018|9782345678901|Physics|2
+BOOK|c3d5f6a7-1b2c-4d5e-a6f7-8e9d0c1b2a3f|Chemistry Fundamentals|Carol M|2020|9783456789012|Chemistry|4
+BOOK|d4e6f7b8-2c3d-5e6f-b7a8-9c0d1e2f3b4a|English Literature|David K|2017|9784567890123|Literature|3
+BOOK|e5f7a8c9-3d4e-6f7a-c8b9-0d1e2f3c4b5a|World History|Eva L|2015|9785678901234|History|2
+BOOK|f6a8b9d0-4e5f-7a8b-d9c0-1e2f3c4d5b6a|Computer Science|Frank P|2021|9786789012345|Technology|5
+BOOK|a7b9c0e1-5f6a-8b9c-e0d1-2f3c4d5e6b7a|Art and Design|Grace Q|2016|9787890123456|Art|2
+BOOK|b8c0d1f2-6a7b-9c0d-f1e2-3c4d5e6f7a8b|Geography Basics|Harry R|2019|9788901234567|Geography|3
+BOOK|c9d1e2a3-7b8c-0d1e-a2f3-4d5e6f7a8b9c|Philosophy Intro|Isabel S|2022|9789012345678|Philosophy|2
+BOOK|d0e2f3b4-8c9d-1e2f-b3a4-5e6f7a8b9c0d|Psychology 101|Jack T|2018|9780123456789|Psychology|3
+MAGAZINE|f1a2b3c4-9d0e-1f2a-b3c4-5d6e7f8a9b0c|Tech Today|John D|2023|10
+MAGAZINE|a2b3c4d5-0e1f-2a3b-c4d5-6e7f8a9b0c1d|Fashion Weekly|Kelly M|2022|5
+MAGAZINE|b3c4d5e6-1f2a-3b4c-d5e6-7f8a9b0c1d2e|Health Monthly|Laura N|2021|3
+MAGAZINE|c4d5e6f7-2a3b-4c5d-e6f7-8a9b0c1d2e3f|Sports Arena|Mark P|2023|7
+MAGAZINE|d5e6f7a8-3b4c-5d6e-f7a8-9b0c1d2e3f4a|Travel Explorer|Nina Q|2020|6
+JOURNAL|e6f7a8b9-4c5d-6e7f-a8b9-0c1d2e3f4a5b|AI Research|Oliver R|2022|12
+JOURNAL|f7a8b9c0-5d6e-7f8a-b9c0-1d2e3f4a5b6c|Medical Studies|Patricia S|2021|8
+JOURNAL|a8b9c0d1-6e7f-8a9b-c0d1-2e3f4a5b6c7d|Environmental Journal|Quinn T|2020|6
+JOURNAL|b9c0d1e2-7f8a-9b0c-d1e2-3f4a5b6c7d8e|Economics Review|Rachel U|2019|9
+JOURNAL|c0d1e2f3-8a9b-0c1d-e2f3-4a5b6c7d8e9f|Physics Letters|Samuel V|2018|11
+MAGAZINE|f47ac10b-58cc-4372-a567-0e02b2c3d479|Vogue Style|Anna Wintour|2022|04
+MAGAZINE|d1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d|National Geographic|Chris Johns|2021|11
+JOURNAL|a1b2c3d4-5678-4910-bcde-f123456789ab|Nature Physics|Springer|2023|Vol 45
+BOOK|550e8400-e29b-41d4-a716-446655440000|Advanced Calculus|Dr. Aris|2019|9783161484100|Educational|1
+BOOK|9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d|The Martian|Andy Weir|2011|9780804139021|Fiction|1
+BOOK|e1234567-89ab-cdef-0123-456789abcdef|World War II|Anthony Beevor|2012|9780316023740|History|1
+BOOK|88a1b2c3-d4e5-4f6g-7h8i-9j0k1l2m3n4o|Python for Beginners|Guido Van|2024|N/A|Educational|1
+JOURNAL|c2d3e4f5-a6b7-c8d9-e0f1-g2h3i4j5k6l7|The Lancet|Medical Press|2023|Issue 902
+MAGAZINE|b2c3d4e5-f6a7-b8c9-d0e1-f2g3h4i5j6k7|Forbes 500|Steve Forbes|2020|12
+BOOK|77b1a2c3-d4e5-4f6g-7h8i-9j0k1l2m3n4o|Deep Learning|Ian Goodfellow|2016|9780262035613|Educational|1
+BOOK|u1a2b3c4-d5e6-f7g8-h9i0-j1k2l3m4n5o6|The Great Gatsby|F. Scott Fitzgerald|1925|9780743273565|Fiction|5
+BOOK|v2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6p7|1984|George Orwell|1949|9780451524935|Dystopian|3
+BOOK|w3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8|Sapiens|Yuval Noah Harari|2011|9780062316097|History|2
+BOOK|x4d5e6f7-g8h9-i0j1-k2l3-m4n5o6p7q8r9|Educated|Tara Westover|2018|9780399590504|Memoir|4
+BOOK|y5e6f7g8-h9i0-j1k2-l3m4-n5o6p7q8r9s0|The Hobbit|J.R.R. Tolkien|1937|9780547928227|Fantasy|6
+MAGAZINE|m1a2b3c4-d5e6-f7g8-h9i0-j1k2l3m4n5o6|Wired|Gideon Lichfield|2024|312
+MAGAZINE|m2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6p7|The Economist|Zanny Beddoes|2024|9381
+MAGAZINE|m3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8|Time|Edward Felsenthal|2023|105
+JOURNAL|j1a2b3c4-d5e6-f7g8-h9i0-j1k2l3m4n5o6|Science|AAAS|2024|6680
+JOURNAL|j2b3c4d5-e6f7-g8h9-i0j1-k2l3m4n5o6p7|The New England Journal of Medicine|Mass. Medical Society|2023|389
+BOOK|z6f7g8h9-i0j1-k2l3-m4n5-o6p7q8r9s0t1|Atomic Habits|James Clear|2018|9780735211292|Self-Help|10
+BOOK|a7g8h9i0-j1k2-l3m4-n5o6-p7q8r9s0t1u2|Clean Code|Robert C. Martin|2008|9780132350884|Tech|5
+BOOK|b8h9i0j1-k2l3-m4n5-o6p7-q8r9s0t1u2v3|Thinking, Fast and Slow|Daniel Kahneman|2011|9780374275631|Psychology|3
+MAGAZINE|m4d5e6f7-g8h9-i0j1-k2l3-m4n5o6p7q8r9|National Geographic|Nathan Lump|2024|152
+JOURNAL|j3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8|Cell|Elsevier|2024|187
+BOOK|c9i0j1k2-l3m4-n5o6-p7q8-r9s0t1u2v3w4|The Silent Patient|Alex Michaelides|2019|9781250301697|Thriller|4
+BOOK|d0j1k2l3-m4n5-o6p7-q8r9-s0t1u2v3w4x5|A Brief History of Time|Stephen Hawking|1988|9780553380163|Science|2
+MAGAZINE|m5e6f7g8-h9i0-j1k2-l3m4-n5o6p7q8r9s0|Rolling Stone|Noah Shachtman|2024|1385
+JOURNAL|j4d5e6f7-g8h9-i0j1-k2l3-m4n5o6p7q8r9|Journal of Finance|Wiley|2023|78
+BOOK|e1k2l3m4-n5o6-p7q8-r9s0-t1u2v3w4x5y6|The Alchemist|Paulo Coelho|1988|9780062315007|Fiction|8
+BOOK|b101-uuid-001|The Fellowship of the Ring|J.R.R. Tolkien|1954|9780618346257|Fantasy|4
+BOOK|b102-uuid-002|The Two Towers|J.R.R. Tolkien|1954|9780618346264|Fantasy|3
+BOOK|b103-uuid-003|The Return of the King|J.R.R. Tolkien|1955|9780618346271|Fantasy|3
+BOOK|b104-uuid-004|The Catcher in the Rye|J.D. Salinger|1951|9780316769174|Fiction|2
+BOOK|b105-uuid-005|Brave New World|Aldous Huxley|1932|9780060850524|Dystopian|5
+BOOK|b106-uuid-006|The Da Vinci Code|Dan Brown|2003|9780307474278|Thriller|6
+BOOK|b108-uuid-008|A Game of Thrones|George R.R. Martin|1996|9780553103540|Fantasy|4
+BOOK|b109-uuid-009|A Clash of Kings|George R.R. Martin|1998|9780553108033|Fantasy|2
+BOOK|b110-uuid-010|A Storm of Swords|George R.R. Martin|2000|9780553106633|Fantasy|2
+MAGAZINE|m201-uuid-011|PC Gamer|Future PLC|2024|382
+MAGAZINE|m202-uuid-012|Cosmopolitan|Hearst|2023|1105
+MAGAZINE|m203-uuid-013|GQ Magazine|Condé Nast|2024|45
+MAGAZINE|m204-uuid-014|Vogue|Condé Nast|2024|92
+MAGAZINE|m205-uuid-015|The New Yorker|Condé Nast|2024|52
+JOURNAL|j301-uuid-016|Nature Nanotechnology|Springer|2023|18
+JOURNAL|j302-uuid-017|IEEE Software|IEEE|2024|41
+JOURNAL|j303-uuid-018|Journal of Zoology|Wiley|2022|315
+JOURNAL|j304-uuid-019|The Historical Review|Cambridge|2023|66
+JOURNAL|j305-uuid-020|Global Ecology|Wiley|2024|33
+BOOK|b111-uuid-021|To Kill a Mockingbird|Harper Lee|1960|9780060935467|Classics|3
+BOOK|b112-uuid-022|The Shining|Stephen King|1977|9780307743657|Horror|4
+BOOK|b113-uuid-023|Dune|Frank Herbert|1965|9780441172719|Sci-Fi|7
+BOOK|b114-uuid-024|Foundation|Isaac Asimov|1951|9780553293357|Sci-Fi|2
+BOOK|b115-uuid-025|Neuromancer|William Gibson|1984|9780441569595|Sci-Fi|3
+BOOK|b116-uuid-026|The Road|Cormac McCarthy|2006|9780307387899|Fiction|2
+BOOK|b117-uuid-027|Project Hail Mary|Andy Weir|2021|9780593135204|Sci-Fi|5
+BOOK|b118-uuid-028|Normal People|Sally Rooney|2018|9781984822178|Fiction|4
+BOOK|b120-uuid-030|Circe|Madeline Miller|2018|9780316556347|Mythology|3
+MAGAZINE|m206-uuid-031|Popular Science|Bonnier|2023|295
+MAGAZINE|m207-uuid-032|National Geographic Kids|NG|2024|12
+MAGAZINE|m208-uuid-033|Sports Illustrated|ABG|2024|50
+MAGAZINE|m209-uuid-034|Reader's Digest|Trusted Media|2024|10
+MAGAZINE|m210-uuid-035|Men's Health|Hearst|2023|112
+JOURNAL|j306-uuid-036|Psychological Science|SAGE|2024|35
+JOURNAL|j307-uuid-037|Journal of Cell Biology|Rockefeller|2023|222
+JOURNAL|j308-uuid-038|American Economic Review|AEA|2024|114
+JOURNAL|j309-uuid-039|Philosophical Review|Duke|2023|132
+JOURNAL|j310-uuid-040|Modern Language Review|MHRA|2022|117
+BOOK|b121-uuid-041|Harry Potter 1|J.K. Rowling|1997|9780747532699|Fantasy|12
+BOOK|b122-uuid-042|Harry Potter 2|J.K. Rowling|1998|9780747538493|Fantasy|10
+BOOK|b123-uuid-043|Harry Potter 3|J.K. Rowling|1999|9780747542155|Fantasy|10
+BOOK|b124-uuid-044|Harry Potter 4|J.K. Rowling|2000|9780747546245|Fantasy|8
+BOOK|b125-uuid-045|Harry Potter 5|J.K. Rowling|2003|9780747551003|Fantasy|8
+BOOK|b126-uuid-046|Harry Potter 6|J.K. Rowling|2005|9780747581086|Fantasy|8
+BOOK|b127-uuid-047|Harry Potter 7|J.K. Rowling|2007|9780747591054|Fantasy|15
+BOOK|b128-uuid-048|The Book Thief|Markus Zusak|2005|9780375831003|Historical|4
+BOOK|b129-uuid-049|Gone Girl|Gillian Flynn|2012|9780307588371|Thriller|3
+BOOK|b130-uuid-050|Life of Pi|Yann Martel|2001|9780156027328|Adventure|5
+MAGAZINE|m211-uuid-051|Architecture Today|AT|2024|310
+MAGAZINE|m212-uuid-052|Digital Camera World|Future|2024|274
+MAGAZINE|m213-uuid-053|Gardeners' World|BBC|2023|4
+MAGAZINE|m214-uuid-054|Empire Magazine|Bauer|2024|425
+MAGAZINE|m215-uuid-055|Total Film|Future|2024|340
+JOURNAL|j311-uuid-056|Artificial Intelligence|Elsevier|2024|326
+JOURNAL|j312-uuid-057|Journal of Marketing|SAGE|2024|88
+JOURNAL|j313-uuid-058|The Astrophysical Journal|IOP|2023|955
+JOURNAL|j314-uuid-059|Social Psychology|Hogrefe|2023|54
+JOURNAL|j315-uuid-060|New Literary History|Johns Hopkins|2022|53
+BOOK|b131-uuid-061|Sherlock Holmes|Arthur Conan Doyle|1892|9780141034355|Mystery|6
+BOOK|b132-uuid-062|Dracula|Bram Stoker|1897|9780141439846|Horror|3
+BOOK|b133-uuid-063|Frankenstein|Mary Shelley|1818|9780141439471|Horror|3
+BOOK|b134-uuid-064|Pride and Prejudice|Jane Austen|1813|9780141439518|Classics|5
+BOOK|b135-uuid-065|Little Women|Louisa May Alcott|1868|9780147514011|Classics|4
+BOOK|b136-uuid-066|The Picture of Dorian Gray|Oscar Wilde|1890|9780141439570|Fiction|4
+BOOK|b137-uuid-067|Animal Farm|George Orwell|1945|9780451526342|Dystopian|7
+BOOK|b138-uuid-068|Fahrenheit 451|Ray Bradbury|1953|9781451673319|Dystopian|5
+BOOK|b139-uuid-069|The Old Man and the Sea|Ernest Hemingway|1952|9780684801223|Fiction|2
+BOOK|b140-uuid-070|The Sun Also Rises|Ernest Hemingway|1926|9780684830513|Fiction|2
+MAGAZINE|m216-uuid-071|Scientific American|Springer|2024|330
+MAGAZINE|m217-uuid-072|The Spectator|Spectator|2024|10402
+MAGAZINE|m218-uuid-073|New Scientist|Daily Mail|2024|3485
+MAGAZINE|m219-uuid-074|Forbes Asia|Forbes|2023|11
+MAGAZINE|m220-uuid-075|Fortune|Dotdash|2024|100
+JOURNAL|j316-uuid-076|Physics Reports|Elsevier|2024|1045
+JOURNAL|j317-uuid-077|Chemical Reviews|ACS|2023|123
+JOURNAL|j318-uuid-078|The Lancet Oncology|Elsevier|2024|25
+JOURNAL|j319-uuid-079|Linguistic Inquiry|MIT Press|2023|54
+JOURNAL|j320-uuid-080|Mind|Oxford|2024|133
+BOOK|b181-uuid-131|Star Trek: Federation|Judith Reeves|1994|9780671891787|Sci-Fi|3
+BOOK|b182-uuid-132|Star Trek: Destiny|David Mack|2008|9781416591412|Sci-Fi|2
+BOOK|b183-uuid-133|The World According to Garp|John Irving|1978|9780345366764|Fiction|4
+BOOK|b184-uuid-134|Brave New World|Aldous Huxley|1932|9780060850524|Dystopian|6
+BOOK|b185-uuid-135|World War Z|Max Brooks|2006|9780307346612|Horror|5
+MAGAZINE|m228-uuid-136|Star Wars Insider|Titan|2024|225
+MAGAZINE|m229-uuid-137|Guitar World|Future|2024|562
+JOURNAL|j327-uuid-138|World Politics Journal|Cambridge|2023|75
+BOOK|b186-uuid-139|A Field Guide to Birds|Roger Tory Peterson|1934|9780618966141|Nature|3
+BOOK|b187-uuid-140|The Hitchhiker's Guide|Douglas Adams|1979|9780345391803|Sci-Fi|10
+BOOK|b188-uuid-141|The Girl with the Dragon Tattoo|Stieg Larsson|2005|9780307454546|Thriller|5
+BOOK|b189-uuid-142|The Girl Who Played with Fire|Stieg Larsson|2006|9780307454553|Thriller|4
+BOOK|b190-uuid-143|The Girl Who Kicked the Hornets' Nest|Stieg Larsson|2007|9780307454560|Thriller|4
+BOOK|b191-uuid-144|Gone Girl|Gillian Flynn|2012|9780307588371|Thriller|7
+BOOK|b192-uuid-145|The Girl on the Train|Paula Hawkins|2015|9781594634024|Thriller|6
+MAGAZINE|m230-uuid-146|Backpacker Magazine|Outside|2023|15
+JOURNAL|j328-uuid-147|Journal of Biological Chemistry|ASBMB|2024|299
+BOOK|b193-uuid-148|The Power of Habit|Charles Duhigg|2012|9780812981605|Self-Help|8
+BOOK|b194-uuid-149|Atomic Habits|James Clear|2018|9780735211292|Self-Help|15
+BOOK|b195-uuid-150|Deep Work|Cal Newport|2016|9781455586691|Self-Help|5
+BOOK|b196-uuid-151|Digital Minimalism|Cal Newport|2019|9780525536512|Self-Help|4
+BOOK|b197-uuid-152|So Good They Can't Ignore You|Cal Newport|2012|9781455509126|Self-Help|3
+MAGAZINE|m231-uuid-153|Psychology Today|Sussex|2024|44
+JOURNAL|j329-uuid-154|Nature Communications|Springer|2024|15
+BOOK|b198-uuid-155|The 7 Habits of Highly Effective People|Stephen Covey|1989|9781982137274|Self-Help|10
+BOOK|b199-uuid-156|How to Win Friends|Dale Carnegie|1936|9780671027032|Self-Help|12
+BOOK|b200-uuid-157|Think and Grow Rich|Napoleon Hill|1937|9781585424337|Self-Help|9
+MAGAZINE|m232-uuid-158|Success Magazine|eXp|2024|11
+JOURNAL|j330-uuid-159|Strategic Management Journal|Wiley|2023|44
+BOOK|b201-uuid-160|The Lean Startup|Eric Ries|2011|9780307887894|Business|6
+BOOK|b202-uuid-161|Zero to One|Peter Thiel|2014|9780804139298|Business|5
+BOOK|b203-uuid-162|Good to Great|Jim Collins|2001|9780066620992|Business|7
+BOOK|b204-uuid-163|The Intelligent Investor|Benjamin Graham|1949|9780060555665|Finance|4
+BOOK|b205-uuid-164|Rich Dad Poor Dad|Robert Kiyosaki|1997|9781612680194|Finance|11
+MAGAZINE|m233-uuid-165|Money Magazine|AdMedia|2024|8
+JOURNAL|j331-uuid-166|Journal of Finance|Wiley|2024|79
+BOOK|b206-uuid-167|The Art of War|Sun Tzu|1772|9781590302255|Philosophy|15
+BOOK|b207-uuid-168|Beyond Good and Evil|Friedrich Nietzsche|1886|9780140445138|Philosophy|3
+BOOK|b208-uuid-169|Meditations|Marcus Aurelius|180|9780679642602|Philosophy|8
+BOOK|b209-uuid-170|The Republic|Plato|-375|9780140449143|Philosophy|5
+BOOK|b210-uuid-171|Critique of Pure Reason|Immanuel Kant|1781|9780140447477|Philosophy|2
+MAGAZINE|m234-uuid-172|Philosophy Now|Anja Publications|2024|160
+JOURNAL|j332-uuid-173|Ethics Journal|Chicago|2023|134
+BOOK|b211-uuid-174|The Origin of Species|Charles Darwin|1859|9780140432053|Science|4
+BOOK|b212-uuid-175|The Selfish Gene|Richard Dawkins|1976|9780198788607|Science|5
+BOOK|b213-uuid-176|Cosmos|Carl Sagan|1980|9780345331359|Science|9
+BOOK|b214-uuid-177|The Elegant Universe|Brian Greene|1999|9780393338102|Science|3
+MAGAZINE|m235-uuid-179|New Scientist|Daily Mail|2024|3490
+JOURNAL|j333-uuid-180|Cell Reports|Cell Press|2024|43
+BOOK|b216-uuid-181|The Midnight Library|Matt Haig|2020|9780525559474|Fantasy|4
+BOOK|b217-uuid-182|Anxious People|Fredrik Backman|2019|9781501160837|Fiction|3
+BOOK|b218-uuid-183|The Seven Husbands of Evelyn Hugo|Taylor Jenkins Reid|2017|9781501139239|Historical|5
+BOOK|b219-uuid-184|Where the Crawdads Sing|Delia Owens|2018|9780735219090|Mystery|6
+MAGAZINE|m236-uuid-186|Fast Company|Mansueto|2024|182
+MAGAZINE|m237-uuid-187|Inc. Magazine|Mansueto|2024|45
+JOURNAL|j334-uuid-188|Journal of Applied Physics|AIP|2023|134
+BOOK|b221-uuid-189|Klara and the Sun|Kazuo Ishiguro|2021|9780593318171|Sci-Fi|3
+BOOK|b222-uuid-190|Cloud Cuckoo Land|Anthony Doerr|2021|9781982168438|Fiction|4
+BOOK|b223-uuid-191|The Dutch House|Ann Patchett|2019|9780062963406|Fiction|2
+BOOK|b224-uuid-192|Normal People|Sally Rooney|2018|9781984822178|Romance|5
+MAGAZINE|m238-uuid-194|National Geographic History|NG|2024|22
+JOURNAL|j335-uuid-195|The Lancet Public Health|Elsevier|2024|9
+BOOK|b226-uuid-196|The Silent Patient|Alex Michaelides|2019|9781250301697|Thriller|7
+BOOK|b227-uuid-197|The Guest List|Lucy Foley|2020|9780062868824|Mystery|3
+BOOK|b228-uuid-198|The Maid|Nita Prose|2022|9780593356159|Mystery|4
+BOOK|b229-uuid-199|Malibu Rising|Taylor Jenkins Reid|2021|9781524798659|Fiction|5
+BOOK|b230-uuid-200|The Paper Palace|Miranda Cowley Heller|2021|9780593329825|Fiction|3
+MAGAZINE|m239-uuid-201|Outdoor Photographer|Beeb|2023|110
+MAGAZINE|m240-uuid-202|Aviation Week|Informa|2024|14
+JOURNAL|j336-uuid-203|IEEE Transactions on Robotics|IEEE|2024|40
+BOOK|b231-uuid-204|The 48 Laws of Power|Robert Greene|1998|9780140280197|Self-Help|9
+BOOK|b232-uuid-205|The Psychology of Money|Morgan Housel|2020|9780857197689|Finance|12
+BOOK|b233-uuid-206|Can't Hurt Me|David Goggins|2018|9781544512280|Memoir|10
+BOOK|b234-uuid-207|Man's Search for Meaning|Viktor Frankl|1946|9780807014295|Philosophy|15
+BOOK|b235-uuid-208|Dopamine Nation|Anna Lembke|2021|9781524746728|Psychology|6
+MAGAZINE|m241-uuid-209|Bicycling|Hearst|2024|2
+JOURNAL|j337-uuid-210|Trends in Cognitive Sciences|Cell Press|2023|27
+BOOK|b236-uuid-211|The Lincoln Highway|Amor Towles|2021|9780735222359|Historical|4
+BOOK|b237-uuid-212|A Gentleman in Moscow|Amor Towles|2016|9780143110439|Historical|5
+BOOK|b238-uuid-213|The Overstory|Richard Powers|2018|9780393356946|Fiction|3
+BOOK|b239-uuid-214|Sea of Tranquility|Emily St. John Mandel|2022|9780593321447|Sci-Fi|4
+BOOK|b240-uuid-215|Station Eleven|Emily St. John Mandel|2014|9780804172448|Dystopian|6
+MAGAZINE|m242-uuid-216|Locus Magazine|Locus|2024|758
+JOURNAL|j338-uuid-217|Journal of Modern History|Chicago|2024|96
+BOOK|b241-uuid-218|Lessons in Chemistry|Bonnie Garmus|2022|9780385547345|Fiction|10
+BOOK|b242-uuid-219|Tomorrow, and Tomorrow, and Tomorrow|Gabrielle Zevin|2022|9780593321201|Fiction|8
+BOOK|b243-uuid-220|Fairy Tale|Stephen King|2022|9781668002179|Fantasy|7
+BOOK|b244-uuid-221|The Passenger|Cormac McCarthy|2022|9780307268990|Fiction|3
+BOOK|b245-uuid-222|Stella Maris|Cormac McCarthy|2022|9780307269003|Fiction|3
+MAGAZINE|m243-uuid-223|The Paris Review|TPR|2024|248
+JOURNAL|j339-uuid-224|Annual Review of Sociology|Annual Reviews|2023|49
+BOOK|b246-uuid-225|Killers of the Flower Moon|David Grann|2017|9780385534246|History|9
+BOOK|b247-uuid-226|The Wager|David Grann|2023|9780385534260|History|11
+BOOK|b248-uuid-227|The Splendid and the Vile|Erik Larson|2020|9780385348713|History|5
+BOOK|b249-uuid-228|Devil in the White City|Erik Larson|2003|9780375725609|History|4
+BOOK|b250-uuid-229|In the Garden of Beasts|Erik Larson|2011|9780307408853|History|3
+MAGAZINE|m244-uuid-230|Smithsonian Magazine|Smithsonian|2024|55

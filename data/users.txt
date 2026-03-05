@@ -1,2 +1,140 @@
 Naddy1|Nadraht Mohammed
 Moh1|Mohammed N
+Nadraht|Nadraht Mohammed
+Mohammed|Mohammed N
+Alice21|Alice Johnson
+Bobs|Bob Smith
+Kingc|Carol King
+Dav1d|David Lee
+EvaBrown|Eva Brown
+Frank213|Frank Green
+Gracey|Grace Adams
+HarryW1|Harry Wilson
+Isa12|Isabel Clark
+Jack23|Jack Turner
+Kmoore|Kelly Moore
+Laura2|Laura Scott
+Mark|Mark Allen
+Nina2|Nina Young
+Oliver2|Oliver Davis
+Patricia110|Patricia Hall
+Lewis3|Quinn Lewis
+WalkerR|Rachel Walker
+Ali1|Alice Johnson
+Bob1|Bob Smith
+Cha1|Charlie Davis
+Dav1|David Wilson
+Eva1|Eva Green
+Fra1|Frank Miller
+Gra1|Grace Hopper
+Hen1|Henry Cavill
+Isa1|Isaac Newton
+Jam1|James Bond
+Kat1|Katherine Johnson
+Leo1|Leonhard Euler
+Mar1|Marie Curie
+Nik1|Nikola Tesla
+Oli1|Oliver Twist
+Pau1|Paul Dirac
+Que1|Quentin Blake
+Ros1|Rosalind Franklin
+Nad1|Nadraht Mohammed
+Moh2|Mohammed N
+Ali3|Alice Johnson
+Bob4|Bob Smith
+Cha5|Charlie Davis
+Dav6|David Wilson
+Eva7|Eva Green
+Fra8|Frank Miller
+Gra9|Grace Hopper
+Hen10|Henry Cavill
+Isa11|Isaac Newton
+Jam12|James Bond
+Kat13|Katherine Johnson
+Leo14|Leonhard Euler
+Mar15|Marie Curie
+Nik16|Nikola Tesla
+Oli17|Oliver Twist
+Pau18|Paul Dirac
+Que19|Quentin Blake
+Ros20|Rosalind Franklin
+Ste21|Stephen King
+Lin22|Linda Hamilton
+Tom23|Tom Cruise
+Sar24|Sarah Connor
+Pet25|Peter Parker
+Bru26|Bruce Wayne
+Cla27|Clark Kent
+Dia28|Diana Prince
+Art29|Arthur Curry
+Bar30|Barry Allen
+Vic31|Victor Stone
+Hal32|Hal Jordan
+Joh33|John Stewart
+Guy34|Guy Gardner
+Kyl35|Kyle Rayner
+Wal36|Wally West
+Jay37|Jay Garrick
+Max38|Max Mercury
+Jes39|Jesse Quick
+Bar40|Bart Allen
+Ton41|Tony Stark
+Ste42|Steve Rogers
+Nat43|Natasha Romanoff
+Cli44|Clint Barton
+Bru45|Bruce Banner
+Tho46|Thor Odinson
+Wan47|Wanda Maximoff
+Pie48|Pietro Maximoff
+Vis49|Vision
+Sam50|Sam Wilson
+Buc51|Bucky Barnes
+Sco52|Scott Lang
+Hop53|Hope Van Dyne
+Tch54|T'Challa
+Shu55|Shuri
+Oko56|Okoye
+Nak57|Nakia
+Mba58|M'Baku
+Eve59|Everett Ross
+Uly60|Ulysses Klaue
+Phi61|Phil Coulson
+Mar62|Maria Hill
+Nic63|Nick Fury
+Peg64|Peggy Carter
+How65|Howard Stark
+Jar66|Jarvis
+Fri67|Friday
+Edi68|Edith
+Ultr69|Ultron
+Vis70|Vision
+Loki71|Loki Laufeyson
+Hel72|Hela Odinsdottir
+Surt73|Surtur
+Fen74|Fenris
+Gra75|Grandmaster
+Col76|Collector
+Ego77|Ego the Living Planet
+Man78|Mantis
+Dra79|Drax the Destroyer
+Gam80|Gamora
+Neb81|Nebula
+Rok82|Rocket Raccoon
+Gro83|Groot
+Sta84|Star-Lord
+Yon85|Yondu Udonta
+Krag86|Kraglin Obfonteri
+Ayes87|Ayesha
+Adam88|Adam Warlock
+High89|High Evolutionary
+Lylla90|Lylla
+Teef91|Teefs
+Floo92|Floor
+Cosm93|Cosmo the Spacedog
+Stak94|Stakar Ogord
+Mart95|Martinex
+Char96|Charlie-27
+Alet97|Aletta Ogord
+Main98|Mainframe
+Krug99|Krugarr
+Thanos100|Thanos

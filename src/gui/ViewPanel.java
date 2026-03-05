@@ -27,7 +27,11 @@ public class ViewPanel extends JPanel {
         table = new JTable(tableModel);
         table.setCellSelectionEnabled(true);
 
-        add(new JScrollPane(table), BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(table);
+        // Make scrolling 16x faster
+        scrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        add(scrollPane, BorderLayout.CENTER);
+
         JPanel southPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         btnViewHistory = new JButton("View Item History");
         btnViewHistory.addActionListener(e -> showHistoryWindow());
